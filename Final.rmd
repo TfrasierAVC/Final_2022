@@ -25,22 +25,114 @@ mutate(across(where(is.character), as.factor))
 A new  preventative vaccine (covid921) is under test in clinical trials. Given the nature of this vaccine it is suspected that the drug may exhibit different effectiveness across the variety of subpopulations tracked. Consider population subgroups by gender( guys and gals), drug use, and sexual orientation. Write a complete report that separately considers this drug for each subgroup and your recommendations as to whether people in the subgroup should take the vaccine. Structure your report in four sections each devoted to one of the four subgroups, use null and alternative hypothesis statements and correct statistical verbage when referencing p-values in conclusions.
 
 
-$H_$ 
-
-$A_$
 
 
 ## Males
+$H_$ The covid921 does not have an effect on the male population
+$A_$ The covid921 does have an effect on the male population
+
+
+```{r}
+library(dplyr)
+Males = filter(FinalData, FinalData$sex =='M')
+```
+
+##Methods 
+
+
+
+
+##Discriptive Results
+
+
+##Graphical Results
+
+
+##Numerical Results 
+
+
+
+##Inferential Results
 
 
 ## Females
 
+$H_$ The covid921 does not have an effect on the Female population
+$A_$ The covid921 does have an effect on the Female population
+
+
+```{r}
+library(dplyr)
+Females = filter(FinalData, FinalData$sex =='F')
+```
+
+#Methods
+
+
+##Discriptive Results
+
+
+##Graphical Results
+
+
+##Numerical Results 
+
+
+
+##Inferential Results
+
 
 ## LGBTQ
+$H_$ The covid921 does not have an effect on the LGBTQ population
+$A_$ The covid921 does have an effect on the LGBTQ population
+
+```{r}
+library(dplyr)
+LGBTQ = filter(FinalData, FinalData$LGBTQ =='gay')
+```
+
+#Methhods
+
+
+##Discriptive Results
+
+
+##Graphical Results
+
+
+##Numerical Results 
+
+
+
+##Inferential Results
+
 
 
 
 ## Druggies
+$H_$ The covid921 does not have an effect on the Druggies population
+$A_$ The covid921 does have an effect on the Druggies population
+
+
+```{r}
+library(dplyr)
+Druggies = filter(FinalData, FinalData$DrugUser =='yes')
+```
+
+#Methods 
+
+
+##Discriptive Results
+
+
+##Graphical Results
+
+
+##Numerical Results 
+
+
+
+##Inferential Results
 
 
 
