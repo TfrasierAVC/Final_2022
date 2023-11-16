@@ -38,7 +38,7 @@ Males = filter(FinalData, FinalData$sex =='M')
 ```
 
 ##Methods 
-
+Male is categorical, Covid921 vaccine Administration is explanatory variable. covid921 effectivness is a response variable, therefore we use cat~cat.
 
 
 
@@ -67,6 +67,7 @@ Females = filter(FinalData, FinalData$sex =='F')
 ```
 
 #Methods
+Females is categorical, Covid921 vaccine Administration is explanatory variable. covid921 effectivness is a response variable, therefore we use cat~cat.
 
 
 ##Discriptive Results
@@ -92,7 +93,7 @@ LGBTQ = filter(FinalData, FinalData$LGBTQ =='gay')
 ```
 
 #Methhods
-
+LGBTQ is categorical, Covid921 vaccine Administration is explanatory variable. covid921 effectivness is a response variable, therefore we use cat~cat.
 
 ##Discriptive Results
 
@@ -120,7 +121,7 @@ Druggies = filter(FinalData, FinalData$DrugUser =='yes')
 ```
 
 #Methods 
-
+Druggies is categorical, Covid921 vaccine Administration is explanatory variable. Covid921 effectivness is a response variable, therefore we use cat~cat.
 
 ##Discriptive Results
 
