@@ -38,6 +38,7 @@ Males = filter(FinalData, FinalData$sex =='M')
 ```
 
 ##Methods 
+
 Male is categorical, Covid921 vaccine Administration is explanatory variable. covid921 effectivness is a response variable, therefore we use cat~cat.
 
 
@@ -47,9 +48,22 @@ Male is categorical, Covid921 vaccine Administration is explanatory variable. co
 
 ##Graphical Results
 
+```{r}
+barchartGC(~infected+ treatment,data=Males)
+barchartGC(~infected+ treatment,data=Males, type="percent")
 
-##Numerical Results 
+```
 
+This graphs shows that people who got the placebo had a higher percentage of getting covid 19 then oppose the people who didnt. The people whho received  the vaccine had a higher ok rate after the shot.
+
+
+##Numerical Results
+
+```{r}
+table1 <- xtabs(~infected + treatment, data=Males)
+rowPerc(table1)
+colPerc(table1)
+```
 
 
 ##Inferential Results
@@ -67,6 +81,7 @@ Females = filter(FinalData, FinalData$sex =='F')
 ```
 
 #Methods
+
 Females is categorical, Covid921 vaccine Administration is explanatory variable. covid921 effectivness is a response variable, therefore we use cat~cat.
 
 
@@ -75,15 +90,28 @@ Females is categorical, Covid921 vaccine Administration is explanatory variable.
 
 ##Graphical Results
 
+```{r}
+barchartGC(~infected + treatment,data=Females)
+barchartGC(~infected + treatment,data=Females, type="percent")
+
+```
+
+This graphs shows that people who got the placebo had a higher percentage of getting covid 19 then oppose the people who didnt. The people who recieved the vaccine had a balanced ok rate after the shot.
+
 
 ##Numerical Results 
 
-
+```{r}
+table1 <- xtabs(~infected + treatment, data=Females)
+rowPerc(table1)
+colPerc(table1)
+```
 
 ##Inferential Results
 
 
 ## LGBTQ
+
 $H_$ The covid921 does not have an effect on the LGBTQ population
 $A_$ The covid921 does have an effect on the LGBTQ population
 
@@ -93,6 +121,7 @@ LGBTQ = filter(FinalData, FinalData$LGBTQ =='gay')
 ```
 
 #Methhods
+
 LGBTQ is categorical, Covid921 vaccine Administration is explanatory variable. covid921 effectivness is a response variable, therefore we use cat~cat.
 
 ##Discriptive Results
@@ -100,10 +129,23 @@ LGBTQ is categorical, Covid921 vaccine Administration is explanatory variable. c
 
 ##Graphical Results
 
+```{r}
+barchartGC(~infected + treatment,data=LGBTQ)
+barchartGC(~infected + treatment,data=LGBTQ, type="percent")
+
+```
+
+This graphs shows that people who got the placebo had a lower percentage of getting covid 19 then oppose the people who didnt. The people whho recieved the vaccine had a balanced  ok rate after the shhot.
+
 
 ##Numerical Results 
 
 
+```{r}
+table1 <- xtabs(~infected + treatment, data=LGBTQ)
+rowPerc(table1)
+colPerc(table1)
+```
 
 ##Inferential Results
 
@@ -111,6 +153,7 @@ LGBTQ is categorical, Covid921 vaccine Administration is explanatory variable. c
 
 
 ## Druggies
+
 $H_$ The covid921 does not have an effect on the Druggies population
 $A_$ The covid921 does have an effect on the Druggies population
 
@@ -121,6 +164,7 @@ Druggies = filter(FinalData, FinalData$DrugUser =='yes')
 ```
 
 #Methods 
+
 Druggies is categorical, Covid921 vaccine Administration is explanatory variable. Covid921 effectivness is a response variable, therefore we use cat~cat.
 
 ##Discriptive Results
@@ -128,9 +172,24 @@ Druggies is categorical, Covid921 vaccine Administration is explanatory variable
 
 ##Graphical Results
 
+```{r}
+barchartGC(~infected + treatment,data=Druggies)
+barchartGC(~infected + treatment,data=Druggies, type="percent")
+
+```
+
+This graphs shows that people who got the placebo had a lower percentage of getting covid 19 then oppose the people who didnt. The people whho recieved the vaccine had a lower ok rate after the shhot.
+
+
 
 ##Numerical Results 
 
+
+```{r}
+table1 <- xtabs(~infected + treatment, data=Druggies)
+rowPerc(table1)
+colPerc(table1)
+```
 
 
 ##Inferential Results
