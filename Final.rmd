@@ -51,7 +51,6 @@ Male is categorical, Covid921 vaccine Administration is explanatory variable. co
 ```{r}
 barchartGC(~infected+ treatment,data=Males)
 barchartGC(~infected+ treatment,data=Males, type="percent")
-
 ```
 
 This graphs shows that people who got the placebo had a higher percentage of getting covid 19 then oppose the people who didnt. The people whho received  the vaccine had a higher ok rate after the shot.
@@ -64,12 +63,20 @@ table1 <- xtabs(~infected + treatment, data=Males)
 rowPerc(table1)
 colPerc(table1)
 ```
+This graphh shows the people who had took the vaccine, 98.85% was ok, and people who took the placebo 97.45% was ok. The people without taking the placebo who took the vaccine 50% was ok and the people who took thhe vaccine, 49.52% was ok.
 
 
-##Inferential Results
+## Inferential Results
 
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
 
-## Females
+the p value is 0.000000000001098. We reject thhe null hypothesis. The fisher exact is 0.00000000000004631.
+
+##  Females
 
 $H_$ The covid921 does not have an effect on the Female population
 $A_$ The covid921 does have an effect on the Female population
@@ -80,15 +87,15 @@ library(dplyr)
 Females = filter(FinalData, FinalData$sex =='F')
 ```
 
-#Methods
+# Methods
 
 Females is categorical, Covid921 vaccine Administration is explanatory variable. covid921 effectivness is a response variable, therefore we use cat~cat.
 
 
-##Discriptive Results
+## Discriptive Results
 
 
-##Graphical Results
+## Graphical Results
 
 ```{r}
 barchartGC(~infected + treatment,data=Females)
@@ -99,16 +106,27 @@ barchartGC(~infected + treatment,data=Females, type="percent")
 This graphs shows that people who got the placebo had a higher percentage of getting covid 19 then oppose the people who didnt. The people who recieved the vaccine had a balanced ok rate after the shot.
 
 
-##Numerical Results 
+## Numerical Results 
 
 ```{r}
-table1 <- xtabs(~infected + treatment, data=Females)
-rowPerc(table1)
-colPerc(table1)
+table2 <- xtabs(~infected + treatment, data=Females)
+rowPerc(table2)
+colPerc(table2)
 ```
 
-##Inferential Results
 
+This graph shows the people who had took the vaccine, 49.88% was ok, and people who took the placebo 50.12% was ok. The people without taking the placebo who took the vaccine 97.96% was ok and the people who took thhe vaccine, 98.63% was ok
+
+## Inferential Results
+
+
+```{r}
+chisq.test(table2)
+chisqtestGC(table2)
+fisher.test(table2)
+```
+
+the p value is 0.00002732. we reject thhe null hypothesis. the fisher exact test is 0.0002162.
 
 ## LGBTQ
 
@@ -120,11 +138,11 @@ library(dplyr)
 LGBTQ = filter(FinalData, FinalData$LGBTQ =='gay')
 ```
 
-#Methhods
+# Methhods
 
 LGBTQ is categorical, Covid921 vaccine Administration is explanatory variable. covid921 effectivness is a response variable, therefore we use cat~cat.
 
-##Discriptive Results
+## Discriptive Results
 
 
 ##Graphical Results
@@ -142,15 +160,25 @@ This graphs shows that people who got the placebo had a lower percentage of gett
 
 
 ```{r}
-table1 <- xtabs(~infected + treatment, data=LGBTQ)
-rowPerc(table1)
-colPerc(table1)
+table3 <- xtabs(~infected + treatment, data=LGBTQ)
+rowPerc(table3)
+colPerc(table3)
 ```
+
+This graph shows the people who had took the vaccine, 49.98% was ok, and people who took the placebo 50.02% was ok. The people without taking the placebo who took the vaccine 99.34% was ok and the people who took thhe vaccine, 96.46% was ok.
+
+
 
 ##Inferential Results
 
 
+```{r}
+chisq.test(table3)
+chisqtestGC(table3)
+fisher.test(table3)
+```
 
+the p value is 0.00006668. therefore we reject the null hypothesis. the fisher exact test p value is 0.00001029.
 
 ## Druggies
 
@@ -186,18 +214,27 @@ This graphs shows that people who got the placebo had a lower percentage of gett
 
 
 ```{r}
-table1 <- xtabs(~infected + treatment, data=Druggies)
-rowPerc(table1)
-colPerc(table1)
+table4 <- xtabs(~infected + treatment, data=Druggies)
+rowPerc(table4)
+colPerc(table4)
 ```
+
+This graphh shows the people who had took the vaccine,48.81 % was ok, and people who took the placebo 51.19% was ok. The people without taking the placebo who took the vaccine 99.6% was ok and the people who took thhe vaccine, 96.94% was ok.
+
 
 
 ##Inferential Results
 
 
+```{r}
+chisq.test(table4)
+chisqtestGC(table4)
+fisher.test(table4)
+```
 
 
+the p value is 0.00002842. therefore we reject the null hypothhesis. the fisher exact test p value is 0.0000232.
 
 # Overall Results and Conclusions
-
+in conclusions the original is, the vaccine is suspected that it may exhibit different effectiveness across the variety of subpopulations tracked? thhere is a difference in the effectiveness across the variety of subpopulations. the males and females who took the vaccine did better than the others who took the placebo. the lgbtq and druggies who took the vaccine didnt do better than the others whho took the placebo. the male p value 0.0001098. thhe female p value was 0.00002732. the lgbtq p value 0.00006668. the druggies p value is 0.0002842. sice all the p value is smaller than 0.05 we reject the null hypothesis.
 
